@@ -1,0 +1,8 @@
+<nav>
+    <span><a href="/">Home</a></span>
+    <% if(!isLoggedIn) { %>
+        <span><a href="/login">Login</a></span>
+    <% } else { %>
+        <span><a href="/account">My account</a></span>
+    <% } %>
+</nav>

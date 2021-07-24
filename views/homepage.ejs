@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head.ejs', {pageTitle}) %>
+    <body>
+        <%- include('partials/nav.ejs') %>
+        <% if(msg) { %>
+           <p><%= msg %></p>
+        <% } %>
+        <h3>Welcome</h3>
+        <% if(!isLoggedIn) { %>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        <% } else { %>
+            <a href="/account">My account</a>
+            <%- include('partials/logout.ejs') %>
+        <% } %>
+    </body>
+</html>

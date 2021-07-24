@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head.ejs', {pageTitle}) %>
+    <body>
+        <%- include('partials/nav.ejs') %>
+        <h3>Welcome <%= user.name %></h3>
+        <a href="/edit">Edit your account</a>
+        <% if (user.image) { %>
+            <img src="/uploads/<%= user.image%>" alt="dsfdsfs">
+            <a href="/image" >Change image</a>
+        <% } else{ %>
+            <a href="/image" >Upload an image</a>
+        <% } %>
+        <%- include('partials/logout.ejs') %>
+    </body>
+</html>

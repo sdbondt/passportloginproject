@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head.ejs', {pageTitle}) %>
+    <body>
+        <%- include('partials/nav.ejs') %>
+        <h3>Upload an image</h3>
+        <form action="/image" method="POST" enctype="multipart/form-data" >
+            <label for="image">Post your image</label>
+            <input type="file" name="image" id="image" accept="image/gif, image/png, image/jpeg">
+            <button type="submit">Add image</button>
+        </form>
+    </body>
+</html>
