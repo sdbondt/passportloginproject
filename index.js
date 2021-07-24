@@ -45,7 +45,7 @@ passport.use(Account.createStrategy());
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: 'http://localhost:3000/github/callback'
+  callbackURL: `${process.env.url}github/callback`
 }, async function(accessToken, refreshToken, profile, cb) {
   try {
     let user = await Account.findOne({ githubId: profile.id });
